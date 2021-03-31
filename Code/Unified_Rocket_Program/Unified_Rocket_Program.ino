@@ -59,6 +59,15 @@ void receiveEvent(int bytes) {
 
 void loop(void)
 {
+  if (buttonid == 9) {
+    Wire.begin();
+      
+    Wire.beginTransmission(9); // transmit to device #9
+    Wire.write(9);       // sends x 
+    Wire.endTransmission();    // stop transmitting 
+    Wire.begin();
+  }
+  
   Serial.println(check);
   if(buttonid == 3 && go == false){  //buttonid == 4 && 
     check = false;
@@ -99,6 +108,13 @@ void loop(void)
         delay(100);
         digitalWrite(5, LOW);
     }    
+     else{
+        Wire.begin();
+      
+        Wire.beginTransmission(9); // transmit to device #9
+        Wire.write(8);       // sends x 
+        Wire.endTransmission();    // stop transmitting    
+     }
   }
  else if(go && check){
   timer = millis();

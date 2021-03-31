@@ -16,6 +16,7 @@ SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 // Struct to hold the data we want to transmit/receive
 struct Packet {
   byte a;
+  byte b;
 } pkt_tx, pkt_rx;
 
 #define BAUDRATE 9600
@@ -39,10 +40,10 @@ void loop() {
     pkt_tx.a = 0;
   }
 
-  if(pkt_rx.a == 1){
+  if(pkt_rx.b == 1){
     digitalWrite(8, HIGH);
   }
-  else if (pkt_rx.a == 0){
+  else if (pkt_rx.b == 0){
     digitalWrite(8, LOW);
   }
   // Receive data from the bluetooth

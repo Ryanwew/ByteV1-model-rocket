@@ -13,13 +13,19 @@
 #define RX 3
 #define TX 2
 
+int acount;
+int atru;
+
 int x;
+
+int counte;
 
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 // Struct to hold the data we want to transmit/receive
 struct Packet {
   byte a;
+  byte b;
 } pkt_tx, pkt_rx;
 
 #define BAUDRATE 9600
@@ -44,7 +50,39 @@ void receiveEvent(int bytes) {
 }
 
 void loop() {  
+  if(pkt_rx.a == 1){
+    acount ++;
+    if (acount >3){
+      atru = 1;
+    }
+  }
+  else {
+    atru = 0;
+    acount = 0;
+  }
 
+  
+  /*
+  counte ++;
+  Serial.print(counte);
+  if (counte > 200){
+    Serial.print("counte");
+    counte = 0;
+    Wire.beginTransmission(8); // transmit to device #8
+    Wire.write(9); 
+    Wire.endTransmission();
+    Serial.print("finished");
+    if (x == 9){
+      pkt_tx.b = 1;
+      digitalWrite(8, LOW);
+    }
+    else{
+      pkt_tx.b = 0;
+      digitalWrite(8, HIGH);
+    }
+  }
+  */
+  
   if(x == 5){
     pkt_tx.a = 1;
   }
@@ -52,14 +90,15 @@ void loop() {
     pkt_tx.a = 0;
   }
 
-  if(pkt_rx.a == 1){
+  
+
+  if(atru == 1){
     digitalWrite(8, HIGH);
     Wire.beginTransmission(8); // transmit to device #8
     Wire.write(3); 
     Wire.endTransmission();
-    Wire.begin(9);
   }
-  else if (pkt_rx.a == 0){
+  else if (atru == 0){
     digitalWrite(8, LOW);
   }
   // Receive data from the bluetooth
@@ -73,7 +112,7 @@ void loop() {
 // Function responsible for transmitting data over bluetooth
 void bluetooth_transmit() {
   // Update data to be transmitted
-  //pkt_tx.a = 0;
+
 
   // Write packet data to the bluetooth - and transmit
   BTSerial.write((byte *) & pkt_tx,sizeof(Packet));
