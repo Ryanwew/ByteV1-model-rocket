@@ -12,7 +12,9 @@
 
 #define RX 3
 #define TX 2
- 
+
+int x;
+
 SoftwareSerial BTSerial(RX, TX); // (RX, TX)
 
 // Struct to hold the data we want to transmit/receive
@@ -42,7 +44,8 @@ void receiveEvent(int bytes) {
 }
 
 void loop() {  
-  if(digitalRead(9)){
+
+  if(x == 5){
     pkt_tx.a = 1;
   }
   else{
@@ -51,6 +54,10 @@ void loop() {
 
   if(pkt_rx.a == 1){
     digitalWrite(8, HIGH);
+    Wire.beginTransmission(8); // transmit to device #8
+    Wire.write(3); 
+    Wire.endTransmission();
+    Wire.begin(9);
   }
   else if (pkt_rx.a == 0){
     digitalWrite(8, LOW);

@@ -7,13 +7,17 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(5, HIGH);
-  digitalWrite(6, LOW);
+        digitalWrite(5, HIGH);
+        delay(300);
+        digitalWrite(5, LOW);
+        delay(50);
+        digitalWrite(5, HIGH);
+        delay(100);
+        digitalWrite(5, LOW);
+        delay(50);
+        digitalWrite(5, HIGH);
+        delay(100);
+        digitalWrite(5, LOW);
 
-  delay(500);
-  
-  digitalWrite(6, HIGH);
-  digitalWrite(5, LOW);
-
-  delay(300);
+  delay(2000);
 }

@@ -46,7 +46,8 @@ void setup(void)
 
   Wire.begin(8);
 
-  pinMode(6, OUTPUT); 
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
 
   Wire.onReceive(receiveEvent);
 }
@@ -59,7 +60,7 @@ void receiveEvent(int bytes) {
 void loop(void)
 {
   Serial.println(check);
-  if(go == false){  //buttonid == 4 && 
+  if(buttonid == 3 && go == false){  //buttonid == 4 && 
     check = false;
     Wire.begin();
     go = true;
@@ -83,8 +84,20 @@ void loop(void)
         Wire.begin();
       
         Wire.beginTransmission(9); // transmit to device #9
-        Wire.write(icstate);              // sends x 
+        Wire.write(5);       // sends x 
         Wire.endTransmission();    // stop transmitting
+
+        digitalWrite(5, HIGH);
+        delay(300);
+        digitalWrite(5, LOW);
+        delay(50);
+        digitalWrite(5, HIGH);
+        delay(100);
+        digitalWrite(5, LOW);
+        delay(50);
+        digitalWrite(5, HIGH);
+        delay(100);
+        digitalWrite(5, LOW);
     }    
   }
  else if(go && check){
