@@ -1,11 +1,4 @@
-// Custom two-way communication with Bluetooth HM-10
-// Transmitting & receiving data in the form of a struct
-//
-// Writes and reads (hardcoded) data to the software UART 
-//  and prints the transmitted & received packet
 
-
-// Library to make a Software UART
 #include <SoftwareSerial.h>
 
 #define RX 3

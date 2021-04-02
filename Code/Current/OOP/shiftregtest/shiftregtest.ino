@@ -61,7 +61,6 @@ class shift{
   }
 };
 
-
 shift maine;
 
 void setup() {
@@ -77,7 +76,4 @@ void setup() {
 
 void loop() {
   maine.blinkUpdate(millis());
-  
-  //maine.blinkUpdate(millis());
-  
 }
