@@ -55,10 +55,14 @@ class bluetooth {
   void bluetoothRun(){
     bluetoothRecive();
     valueCheck();
+
+      Serial.print("tx: "); 
+      Serial.println(_pktx[0]);
+  Serial.print("rx: "); 
+  Serial.println(_pkrx[0]);
   }
 
   bluetoothStart(byte baudrate) {
-    Serial.begin(baudrate);
     BTSerial.begin(baudrate);
     return(true);
   }
@@ -85,6 +89,9 @@ unsigned long timer;
 void setup() {
   chip.bluetoothStart(9600);
 
+  Serial.begin(9600);
+  Serial.print("running");
+
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
 }
@@ -97,7 +104,7 @@ void loop() {
     chip.bluetoothSet(0, 1);
   }
   else{
-    chip.bluetoothSet(0, 0);
+    chip.bluetoothSet(0, 1);
   }
 
 
