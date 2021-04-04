@@ -1,21 +1,16 @@
 #include <SoftwareSerial.h>
 SoftwareSerial BTSerial(3, 2);
-/*
+
 class bluetooth {
   private:
   
-  struct Packet {
-  byte a;
-  } pkt_tx, pkt_rx;
+  byte tx[1];
+  byte rx[1];
   
-  void bluetoothTransmit() {
-    BTSerial.write((byte *) & pkt_tx,sizeof(Packet));
-  }
-
   void bluetoothRecive() {
     static byte count = 10;
-    if(BTSerial.available() >= sizeof(Packet)){
-      BTSerial.readBytes((byte *) & pkt_rx,sizeof(Packet));
+    if(BTSerial.available() >= sizeof(rx)){
+      BTSerial.readBytes(rx,sizeof(rx));
       while(BTSerial.available() > 0)
         BTSerial.read();   
       bluetoothTransmit();
@@ -29,7 +24,11 @@ class bluetooth {
       count++;
     }
   }
-  /*
+
+  void bluetoothTransmit() {
+    BTSerial.write(tx,sizeof(tx));
+  }
+  
   void valueCheck(){
     static byte _confidence = 0;
     
@@ -81,7 +80,7 @@ class bluetooth {
 };
 
 bluetooth chip;
-*/
+
 unsigned long timer;
 
 void setup() {
@@ -95,10 +94,6 @@ void setup() {
   pinMode(9, INPUT);
 }
 
-  struct Packet {
-  byte a;
-  } pkt_tx, pkt_rx;
-
 void loop() {
   timer = millis();
   //chip.bluetoothRun();
@@ -106,47 +101,23 @@ void loop() {
   bluetoothRecive();
 
   if(digitalRead(9)){
-    pkt_tx.a = 1;
+    tx[0] = 1;
   }
   else{
-    pkt_tx.a = 0;
+    tx[0] = 0;
   }
 
 
-  if(pkt_rx.a == 1){
+  if(rx[0] == 1){
     digitalWrite(8, HIGH);
   }
-  else if (pkt_rx.a == 0){
+  else if (rx[0] == 0){
     digitalWrite(8, LOW);
   }  
     Serial.print("tx: "); 
-    Serial.println(pkt_tx.a);
+    Serial.println(tx[0]);
     Serial.print("rx: "); 
-    Serial.println(pkt_rx.a);
+    Serial.println(rx[0]);
   delay(50);
   //chip.bluetoothDelay(timer);
 }
-
-
-
-void bluetoothRecive() {
-    static byte count = 10;
-    if(BTSerial.available() >= sizeof(Packet)){
-      BTSerial.readBytes((byte *) & pkt_rx,sizeof(Packet));
-      while(BTSerial.available() > 0)
-        BTSerial.read();   
-      bluetoothTransmit();
-    }
-    else {
-      if (count >=10) {
-        count = 0;
-
-        bluetoothTransmit();
-      }
-      count++;
-    }
-  }
-
-  void bluetoothTransmit() {
-    BTSerial.write((byte *) & pkt_tx,sizeof(Packet));
-  }

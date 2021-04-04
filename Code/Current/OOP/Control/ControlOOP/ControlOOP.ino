@@ -62,7 +62,7 @@ class bluetooth {
   Serial.println(_pkrx[0]);
   }
 
-  bluetoothStart(byte baudrate) {
+  bluetoothStart(int baudrate) {
     BTSerial.begin(baudrate);
     return(true);
   }
@@ -104,7 +104,7 @@ void loop() {
     chip.bluetoothSet(0, 1);
   }
   else{
-    chip.bluetoothSet(0, 1);
+    chip.bluetoothSet(0, 0);
   }
 
 
