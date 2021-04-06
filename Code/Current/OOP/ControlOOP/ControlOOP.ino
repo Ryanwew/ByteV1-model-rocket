@@ -32,21 +32,29 @@ class bluetooth {
   }
 
   void valueCheck(){
-    static int _confidence = 0;
+    static byte _confidence = 0;
+    Serial.print("confidence: "); Serial.println(_confidence);
     static byte _valsum;
-    
-    if(_pkrx == _rxbuffer){
+    _valsum = 0;
+    for(byte _i = 0; _i == sizeof(_pkrx); _i ++){
+      if(_pkrx[_i] == _rxbuffer[_i]){
+        _valsum++;
+      }
+    }
+    Serial.print("valsum: "); Serial.println(_valsum);
+    if(_valsum == 5){
       _confidence ++;
-      if(_confidence > 1){
-        for(byte _i = 0; _i <= sizeof(_rxout); _i ++){
-          _rxout[_i] = _rxbuffer[_i];
+      if(_confidence > 4){
+        _confidence = 0;
+        for(byte _t = 0; _t == sizeof(_pkrx); _t ++){
+          _rxout[_t] = _rxbuffer[_t];
         }
       }
     }
     else{
       _confidence = 0;
-      for(byte _i = 0; _i <= sizeof(_rxbuffer); _i ++){
-        _rxbuffer[_i] = _pkrx[_i];
+      for(byte _o = 0; _o == sizeof(_pkrx); _o ++){
+        _rxbuffer[_o] = _pkrx[_o];
       }
     }
   }
@@ -61,6 +69,9 @@ class bluetooth {
       Serial.println(_pktx[0]);
   Serial.print("rx: "); 
   Serial.println(_pkrx[0]);
+      Serial.print("buffer: "); 
+      Serial.println(_rxbuffer[0]);
+      Serial.println("");
   }
 
   bluetoothStart(int baudrate) {
@@ -70,7 +81,7 @@ class bluetooth {
   }
 
   void bluetoothDelay(unsigned long start){
-    if ((millis()-start) < 55){
+    if ((millis()-start) < 900){
       delay(millis()-start);
     }
   }
@@ -114,5 +125,6 @@ void loop() {
     digitalWrite(8, LOW);
   }  
   
-  chip.bluetoothDelay(timer);
+  //chip.bluetoothDelay(timer);
+  delay(400);
 }
