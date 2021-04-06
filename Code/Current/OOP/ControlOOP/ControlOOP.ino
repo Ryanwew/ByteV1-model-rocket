@@ -8,6 +8,7 @@ class bluetooth {
 
   byte _rxbuffer[5];
   byte _rxout[5];
+  byte _confidence;
   
   void bluetoothTransmit() {
     BTSerial.write(_pktx, sizeof(_pktx));
@@ -32,11 +33,12 @@ class bluetooth {
   }
 
   void valueCheck(){
-    static byte _confidence = 0;
+    byte _rxsize;
+    _rxsize = sizeof(_pkrx);
     Serial.print("confidence: "); Serial.println(_confidence);
-    static byte _valsum;
-    _valsum = 0;
-    for(byte _i = 0; _i == sizeof(_pkrx); _i ++){
+    static byte _valsum = 0;
+    
+    for(byte _i = 0; _i < _rxsize; _i ++){
       if(_pkrx[_i] == _rxbuffer[_i]){
         _valsum++;
       }
@@ -46,17 +48,18 @@ class bluetooth {
       _confidence ++;
       if(_confidence > 4){
         _confidence = 0;
-        for(byte _t = 0; _t == sizeof(_pkrx); _t ++){
+        for(byte _t = 0; _t < _rxsize; _t ++){
           _rxout[_t] = _rxbuffer[_t];
         }
       }
     }
     else{
       _confidence = 0;
-      for(byte _o = 0; _o == sizeof(_pkrx); _o ++){
+      for(byte _o = 0; _o < _rxsize; _o ++){
         _rxbuffer[_o] = _pkrx[_o];
       }
     }
+    _valsum = 0;
   }
 
   public:
@@ -125,6 +128,5 @@ void loop() {
     digitalWrite(8, LOW);
   }  
   
-  //chip.bluetoothDelay(timer);
-  delay(400);
+  chip.bluetoothDelay(timer);
 }
