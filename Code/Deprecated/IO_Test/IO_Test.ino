@@ -1,23 +1,16 @@
-
+#include <Wire.h>
 
 void setup() {
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
+  pinMode(8, OUTPUT);
 
 }
 
 void loop() {
-        digitalWrite(5, HIGH);
-        delay(300);
-        digitalWrite(5, LOW);
-        delay(50);
-        digitalWrite(5, HIGH);
-        delay(100);
-        digitalWrite(5, LOW);
-        delay(50);
-        digitalWrite(5, HIGH);
-        delay(100);
-        digitalWrite(5, LOW);
-
-  delay(2000);
+  digitalWrite(8, HIGH);
+  delay(3000);
+  digitalWrite(8, LOW);
+    Wire.beginTransmission(8); // transmit to device #8
+    Wire.write(9); 
+    Wire.endTransmission();
+  delay(1000);
 }

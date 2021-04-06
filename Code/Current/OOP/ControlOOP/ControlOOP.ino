@@ -10,13 +10,13 @@ class bluetooth {
   byte _rxout[5];
   
   void bluetoothTransmit() {
-    BTSerial.write(_pktx, 5);
+    BTSerial.write(_pktx, sizeof(_pktx));
   }
 
   void bluetoothRecive() {
     static byte _count = 10;
-    if(BTSerial.available() >= 5){
-      BTSerial.readBytes(_pkrx, 5);
+    if(BTSerial.available() >= sizeof(_pkrx)){
+      BTSerial.readBytes(_pkrx, sizeof(_pkrx));
       while(BTSerial.available() > 0)
         BTSerial.read();   
       bluetoothTransmit();
@@ -32,19 +32,20 @@ class bluetooth {
   }
 
   void valueCheck(){
-    static byte _confidence = 0;
+    static int _confidence = 0;
+    static byte _valsum;
     
     if(_pkrx == _rxbuffer){
       _confidence ++;
-      if(_confidence > 5){
-        for(byte _i = 0; _i < 6; _i ++){
+      if(_confidence > 1){
+        for(byte _i = 0; _i <= sizeof(_rxout); _i ++){
           _rxout[_i] = _rxbuffer[_i];
         }
       }
     }
     else{
       _confidence = 0;
-      for(byte _i = 0; _i < 6; _i ++){
+      for(byte _i = 0; _i <= sizeof(_rxbuffer); _i ++){
         _rxbuffer[_i] = _pkrx[_i];
       }
     }
@@ -64,6 +65,7 @@ class bluetooth {
 
   bluetoothStart(int baudrate) {
     BTSerial.begin(baudrate);
+    Serial.begin(baudrate);
     return(true);
   }
 
@@ -88,9 +90,6 @@ unsigned long timer;
 
 void setup() {
   chip.bluetoothStart(9600);
-
-  Serial.begin(9600);
-  Serial.print("running");
 
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
