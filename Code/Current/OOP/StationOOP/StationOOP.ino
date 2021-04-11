@@ -85,7 +85,7 @@ class bluetooth {
   }
 
   void bluetoothDelay(unsigned long start){
-    if ((millis()-start) < 900){
+    if ((millis()-start) < 60){
       delay(millis()-start);
     }
   }
@@ -106,22 +106,62 @@ class hardwire {
   byte _txid;
   byte _tx;
   byte _rx;
+  
 
-  public:
-  void hardwireRun(byte txid){
-    _txid = txid;
-    Wire.onReceive(receiveEvent);
+  void _hardwireReceive(int bytes){
+    _rx = Wire.read();
   }
 
-  
+  public:
+  void hardwireStart(byte txid){
+    _txid = txid;
+    Wire.onReceive(_hardwireReceive);
+  }
+
+  hardwireQuery(byte val){
+    _tx = val;
+    Wire.beginTransmission(8); // transmit to device #8
+    Wire.write(_tx); 
+    Wire.endTransmission();  
+  }
+
+  hardwireRx(){
+    return(_rx);
+  }
 };
 
+hardwire pixel;
+
 void setup() {
-  // put your setup code here, to run once:
+  chip.bluetoothStart(9600);
+  pixel.hardwireStart(8);
+
+  pinMode(8, OUTPUT);
+  pinMode(9, INPUT);
 
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+unsigned long millis();
 
+void loop() {
+  timer = millis();
+  
+  chip.bluetoothRun();
+  
+  if(pixel.hardwireRx() == 5){
+    chip.bluetoothSet(0, 1);
+  }
+  else{
+    chip.bluetoothSet(0, 0);
+  }
+
+  if(chip.rxInfo(0) == 1){
+    digitalWrite(8, HIGH);
+    hardwireQuery(3);
+  }
+  else if (chip.rxInfo(0) == 0){
+    digitalWrite(8, LOW);
+  }
+
+  chip.bluetoothDelay(timer);
 }

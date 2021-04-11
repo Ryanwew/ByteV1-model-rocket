@@ -84,7 +84,7 @@ class bluetooth {
   }
 
   void bluetoothDelay(unsigned long start){
-    if ((millis()-start) < 900){
+    if ((millis()-start) < 60){
       delay(millis()-start);
     }
   }
