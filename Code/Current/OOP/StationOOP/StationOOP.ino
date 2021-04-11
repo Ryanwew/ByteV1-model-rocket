@@ -108,14 +108,15 @@ class hardwire {
   byte _rx;
   
 
-  void _hardwireReceive(int bytes){
+  void hardwireReceive(int bytes){
     _rx = Wire.read();
   }
 
   public:
   void hardwireStart(byte txid){
     _txid = txid;
-    Wire.onReceive(_hardwireReceive);
+    Wire.begin();
+    Wire.onReceive(hardwireReceive);
   }
 
   hardwireQuery(byte val){
@@ -141,7 +142,7 @@ void setup() {
 
 }
 
-unsigned long millis();
+unsigned long timer;
 
 void loop() {
   timer = millis();
@@ -157,7 +158,7 @@ void loop() {
 
   if(chip.rxInfo(0) == 1){
     digitalWrite(8, HIGH);
-    hardwireQuery(3);
+    pixel.hardwireQuery(3);
   }
   else if (chip.rxInfo(0) == 0){
     digitalWrite(8, LOW);
