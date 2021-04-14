@@ -116,7 +116,6 @@ class hardwire {
   void hardwireStart(byte txid){
     _txid = txid;
     Wire.begin();
-    Wire.onReceive(hardwireReceive);
   }
 
   hardwireQuery(byte val){
@@ -134,6 +133,8 @@ class hardwire {
 hardwire pixel;
 
 void setup() {
+  Wire.onReceive(pixel.hardwireReceive);
+  
   chip.bluetoothStart(9600);
   pixel.hardwireStart(8);
 
