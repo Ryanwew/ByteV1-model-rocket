@@ -1,7 +1,7 @@
 #include <Wire.h>
 class hardwire {
   private:
-  byte _rx;
+  inline static byte _rx;
 
   public:
   void hardwireStart(){

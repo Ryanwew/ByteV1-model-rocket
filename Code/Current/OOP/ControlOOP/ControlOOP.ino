@@ -33,9 +33,9 @@ class bluetooth {
   }
 
   void valueCheck(){
+    Serial.println(_pkrx[0]);
     byte _rxsize;
     _rxsize = sizeof(_pkrx);
-    Serial.print("confidence: "); Serial.println(_confidence);
     static byte _valsum = 0;
     
     for(byte _i = 0; _i < _rxsize; _i ++){
@@ -43,10 +43,9 @@ class bluetooth {
         _valsum++;
       }
     }
-    Serial.print("valsum: "); Serial.println(_valsum);
     if(_valsum == 5){
       _confidence ++;
-      if(_confidence > 4){
+      if(_confidence > 15){
         _confidence = 0;
         for(byte _t = 0; _t < _rxsize; _t ++){
           _rxout[_t] = _rxbuffer[_t];
@@ -67,14 +66,6 @@ class bluetooth {
   void bluetoothRun(){
     bluetoothRecive();
     valueCheck();
-
-      Serial.print("tx: "); 
-      Serial.println(_pktx[0]);
-  Serial.print("rx: "); 
-  Serial.println(_pkrx[0]);
-      Serial.print("buffer: "); 
-      Serial.println(_rxbuffer[0]);
-      Serial.println("");
   }
 
   bluetoothStart(int baudrate) {
@@ -124,9 +115,7 @@ void loop() {
   if(chip.rxInfo(0) == 1){
     digitalWrite(8, HIGH);
   }
-  else if (chip.rxInfo(0) == 0){
-    digitalWrite(8, LOW);
-  }  
-  
-  chip.bluetoothDelay(timer);
+
+  delay(50);
+  //chip.bluetoothDelay(timer);
 }

@@ -106,11 +106,6 @@ class hardwire {
   byte _txid;
   byte _tx;
   byte _rx;
-  
-
-  void hardwireReceive(int bytes){
-    _rx = Wire.read();
-  }
 
   public:
   void hardwireStart(byte txid){
@@ -128,41 +123,52 @@ class hardwire {
   hardwireRx(){
     return(_rx);
   }
+
+  hardwireSet(byte bytes){
+    _rx = bytes;
+  }
 };
 
 hardwire pixel;
 
-void setup() {
-  Wire.onReceive(pixel.hardwireReceive);
-  
+byte _rx;
+
+void setup() {  
   chip.bluetoothStart(9600);
   pixel.hardwireStart(8);
 
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
 
+  Wire.onReceive(hardwireReceive);
 }
 
 unsigned long timer;
+
+void hardwireReceive(int bytes){
+  _rx = Wire.read();
+  pixel.hardwireSet(_rx);
+}
 
 void loop() {
   timer = millis();
   
   chip.bluetoothRun();
   
-  if(pixel.hardwireRx() == 5){
+  if(pixel.hardwireRx() == 5 || digitalRead(9)){
+    digitalWrite(8, HIGH);
     chip.bluetoothSet(0, 1);
   }
   else{
     chip.bluetoothSet(0, 0);
+    digitalWrite(8, LOW);
   }
 
   if(chip.rxInfo(0) == 1){
-    digitalWrite(8, HIGH);
+    
     pixel.hardwireQuery(3);
   }
   else if (chip.rxInfo(0) == 0){
-    digitalWrite(8, LOW);
   }
 
   chip.bluetoothDelay(timer);
