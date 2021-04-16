@@ -59,6 +59,7 @@ void receiveEvent(int bytes) {
 
 void loop(void)
 {
+  /*
   if (buttonid == 9) {
     Wire.begin();
       
@@ -67,11 +68,10 @@ void loop(void)
     Wire.endTransmission();    // stop transmitting 
     Wire.begin();
   }
-  
+  */
   Serial.println(check);
   if(buttonid == 3 && go == false){  //buttonid == 4 && 
     check = false;
-    Wire.begin();
     go = true;
   }
   
@@ -89,8 +89,6 @@ void loop(void)
                       Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
 
         //delay(200);
-        
-        Wire.begin();
       
         Wire.beginTransmission(9); // transmit to device #9
         Wire.write(5);       // sends x 
@@ -109,10 +107,8 @@ void loop(void)
         digitalWrite(5, LOW);
     }    
      else{
-        Wire.begin();
-      
         Wire.beginTransmission(9); // transmit to device #9
-        Wire.write(8);       // sends x 
+        Wire.write(5);       // sends x 
         Wire.endTransmission();    // stop transmitting    
      }
   }
