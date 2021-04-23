@@ -118,7 +118,7 @@ class hardwire {
     Wire.beginTransmission(8); // transmit to device #8
     Wire.write(_tx); 
     Wire.endTransmission();
-    Wire.begin();  
+    Wire.begin(9);  
   }
 
   hardwireRx(){
@@ -148,8 +148,7 @@ unsigned long timer;
 
 void hardwireReceive(int bytes){
   rx = Wire.read();
-  rx = 5;
-  //pixel.hardwireSet(_rx);
+  pixel.hardwireSet(rx);
 }
 
 void loop() {
@@ -157,7 +156,7 @@ void loop() {
   
   chip.bluetoothRun();
   
-  if(rx == 5){
+  if(pixel.hardwireRx() == 5 || rx == 5){
     digitalWrite(8, HIGH);
     chip.bluetoothSet(0, 1);
   }
