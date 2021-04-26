@@ -171,7 +171,7 @@ void loop(void)
   //Serial.println(z);
   zorientation = SD.open("z.txt", FILE_WRITE);
   zorientation.print(z); zorientation.print(" ");
-  zorientation.print(timer);
+  zorientation.println(timer);
   zorientation.close();
   
   delay(BNO055_SAMPLERATE_DELAY_MS);
