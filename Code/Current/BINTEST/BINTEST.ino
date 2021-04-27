@@ -6,7 +6,7 @@ float timer;
 File xorientation;
 
 struct datastore {
-    uint16_t i1;
+    float i1;
 };
 
 void setup() {
@@ -16,7 +16,7 @@ void setup() {
 
 void loop() {
   struct datastore myData;
-  myData.i1 ++;
+  myData.i1 += 1;
   timer = millis();
   xorientation = SD.open("x.dat", FILE_WRITE);
   xorientation.write((const uint8_t *)&myData, sizeof(myData));
