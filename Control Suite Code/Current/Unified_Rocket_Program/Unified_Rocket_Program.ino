@@ -14,31 +14,25 @@ bool check = true;
 
 int icstate = 1;
 
+struct datastore {
+  unsigned long timer;
+  float xx;
+  float y;
+  float z;
+  float temp;
+  float pres;
+  float alti;
+};
+
 float x = 0;
-float y = 0;
-float z = 0;
-
-float xx = 0;
-
-float temp;
-float pres;
-float alti;
-
-float timer;
-
-File xorientation;
-File yorientation;
-File zorientation;
-
-File tempbarometer;
-File presbarometer;
-File altibarometer;
 
 int buttonid = 0;
 
 bool go = false;
 
 Adafruit_BMP280 bmp;
+
+File login;
 
 void setup(void)
 {
@@ -59,6 +53,7 @@ void receiveEvent(int bytes) {
 
 void loop(void)
 {
+  struct datastore myData;
   /*
   if (buttonid == 9) {
     Wire.begin();
@@ -113,66 +108,31 @@ void loop(void)
      }
   }
  else if(go && check){
-  timer = millis();
+  myData.timer = millis();
   
   /* Get a new sensor event */
   sensors_event_t event;
   bno.getEvent(&event);
 
   x = event.orientation.x, 4;
-  y = event.orientation.y, 4;
-  z = event.orientation.z, 4;
+  myData.y = event.orientation.y, 4;
+  myData.z = event.orientation.z, 4;
 
-  xx=x;
+  myData.xx=x;
   
-  if(xx> 359){
-    xx=xx-360;
+  if(myData.xx> 359){
+    myData.xx=myData.xx-360;
   }
 
-  temp = bmp.readTemperature();
-  //Serial.print(" C: ");
-  //Serial.print(temp);
-  tempbarometer = SD.open("temp.txt", FILE_WRITE);
-  tempbarometer.print(temp); tempbarometer.print(" ");
-  tempbarometer.println(timer);
-  tempbarometer.close();
+  myData.temp = bmp.readTemperature();
 
-  pres = bmp.readPressure();
-  //Serial.print(" Pa: ");
-  //Serial.print(pres);
-  presbarometer = SD.open("pres.txt", FILE_WRITE);
-  presbarometer.print(pres); presbarometer.print(" ");
-  presbarometer.println(timer);
-  presbarometer.close();
+  myData.pres = bmp.readPressure();
 
-  alti = bmp.readAltitude(1013.25);
-  //Serial.print(" M: ");
-  //Serial.print(alti);
-  altibarometer = SD.open("alti.txt", FILE_WRITE);
-  altibarometer.print(pres); altibarometer.print(" ");
-  altibarometer.println(timer);
-  altibarometer.close();
+  myData.alti = bmp.readAltitude(1013.25);
 
-  //Serial.print(" Xtru: ");
-  //Serial.print(xx);
-  xorientation = SD.open("x.txt", FILE_WRITE);
-  xorientation.print(xx); xorientation.print(" ");
-  xorientation.println(timer);
-  xorientation.close();
-
-  //Serial.print(" Y: ");
-  //Serial.print(y);
-  yorientation = SD.open("y.txt", FILE_WRITE);
-  yorientation.print(y); yorientation.print(" "); 
-  yorientation.println(timer);
-  yorientation.close();
-
-  //Serial.print(" Z: ");
-  //Serial.println(z);
-  zorientation = SD.open("z.txt", FILE_WRITE);
-  zorientation.print(z); zorientation.print(" ");
-  zorientation.println(timer);
-  zorientation.close();
+  login = SD.open("x3.dat", FILE_WRITE);
+  login.write((const uint8_t *)&myData, sizeof(myData));
+  login.close();
   
   delay(BNO055_SAMPLERATE_DELAY_MS);
  }
