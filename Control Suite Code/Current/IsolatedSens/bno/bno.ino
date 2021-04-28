@@ -22,6 +22,7 @@ void setup(void)
   Serial.begin(115200);
 
   bno.begin();
+  bno.setExtCrystalUse(true);
 }
 
 void loop(void)
