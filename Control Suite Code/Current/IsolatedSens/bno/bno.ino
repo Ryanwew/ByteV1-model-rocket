@@ -9,28 +9,36 @@ bool check = true;
 
 struct datastore {
   unsigned long timer;
-  float x;
-  float y;
-  float z;
-  float temp;
-  float pres;
-  float alti;
+  float ox;
+  float oy;
+  float oz;
+  float ax;
+  float ay;
+  float az;
 };
 
 void setup(void)
 {
   Serial.begin(115200);
 
+  bno.begin();
 }
 
 void loop(void)
 {
-  bno.begin()
+  struct datastore myData;
         
-  sensors_event_t event;
-  bno.getEvent(&event);
+  sensors_event_t orient, accel;
+  bno.getEvent(&orient, Adafruit_BNO055::VECTOR_EULER);
+  bno.getEvent(&accel, Adafruit_BNO055::VECTOR_LINEARACCEL);
 
-  myData.x = event.orientation.x, 4;
-  myData.y = event.orientation.y, 4;
-  myData.z = event.orientation.z, 4;
+  myData.ox = orient.orientation.x, 4;
+  myData.oy = orient.orientation.y, 4;
+  myData.oz = orient.orientation.z, 4;
+
+  myData.ax = accel.acceleration.x, 4;
+  myData.ay = accel.acceleration.y, 4;
+  myData.az = accel.acceleration.z, 4;
+
+  Serial.print(myData.ax); Serial.print(","); Serial.print(myData.ay); Serial.print(","); Serial.println(myData.az);
 }
