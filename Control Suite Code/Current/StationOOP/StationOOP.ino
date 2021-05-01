@@ -135,12 +135,11 @@ hardwire pixel;
 byte rx;
 
 void setup() {  
-  chip.bluetoothStart(9600);
+  chip.bluetoothStart(115200);
   pixel.hardwireStart(8);
 
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
-
   Wire.onReceive(hardwireReceive);
 }
 
@@ -156,7 +155,7 @@ void loop() {
   
   chip.bluetoothRun();
   
-  if(pixel.hardwireRx() == 5 || rx == 5){
+  if(pixel.hardwireRx() == 5){
     digitalWrite(8, HIGH);
     chip.bluetoothSet(0, 1);
   }

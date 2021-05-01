@@ -5,6 +5,8 @@
 #include <Adafruit_BNO055.h>
 #include <Adafruit_BMP280.h>
 
+File dataFile;
+
 class hardwire {
   private:
   byte _txid;
@@ -45,16 +47,46 @@ struct datastore {
   float ay;
   float az;
   float alt;
-  float temp
+  float temp;
   byte state;
+  byte errReg;
 };
 
 void setup() {
-  // put your setup code here, to run once:
+  Wire.onReceive(hardwireReceive);
+  Serial.begin(115200);
+}
 
+
+void hardwireReceive(int bytes){
+  rx = Wire.read();
+  pixel.hardwireSet(rx);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  struct datastore myData;
 
+}
+
+void sensorLoop() {
+
+  myData.temp = bmp.readTemperature();
+
+  myData.alti = bmp.readAltitude(1013.25);
+
+  sensors_event_t orient, accel;
+  bno.getEvent(&orient, Adafruit_BNO055::VECTOR_EULER);
+  bno.getEvent(&accel, Adafruit_BNO055::VECTOR_LINEARACCEL);
+
+  myData.ox = orient.orientation.x, 4;
+  myData.oy = orient.orientation.y, 4;
+  myData.oz = orient.orientation.z, 4;
+
+  myData.ax = accel.acceleration.x, 4;
+  myData.ay = accel.acceleration.y, 4;
+  myData.az = accel.acceleration.z, 4;
+
+  dataFile = SD.open("log.dat", FILE_WRITE);
+  dataFile.write((const uint8_t *)&myData, sizeof(myData));
+  dataFile.close();
 }

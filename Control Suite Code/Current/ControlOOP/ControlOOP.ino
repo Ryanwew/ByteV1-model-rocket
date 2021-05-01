@@ -94,7 +94,7 @@ bluetooth chip;
 unsigned long timer;
 
 void setup() {
-  chip.bluetoothStart(9600);
+  chip.bluetoothStart(115200);
 
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
