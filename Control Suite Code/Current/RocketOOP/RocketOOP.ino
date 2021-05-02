@@ -36,6 +36,56 @@ class hardwire {
   }
 };
 
+class sensor {
+  private:
+  bool hasChecked;
+  float _ASL;
+
+  public:
+
+  void sensorLoop() {
+    myData.temp = bmp.readTemperature();
+
+    myData.alti = bmp.readAltitude(1013.25);
+
+    sensors_event_t orient, accel;
+    bno.getEvent(&orient, Adafruit_BNO055::VECTOR_EULER);
+    bno.getEvent(&accel, Adafruit_BNO055::VECTOR_LINEARACCEL);
+
+    myData.ox = orient.orientation.x, 4;
+    myData.oy = orient.orientation.y, 4;
+    myData.oz = orient.orientation.z, 4;
+
+    myData.ax = accel.acceleration.x, 4;
+    myData.ay = accel.acceleration.y, 4;
+    myData.az = accel.acceleration.z, 4;
+
+    dataFile = SD.open("log.dat", FILE_WRITE);
+    dataFile.write((const uint8_t *)&myData, sizeof(myData));
+    dataFile.close();
+  }
+
+  sensorStart(float ASL){
+    _ASL = ASL;
+    struct datastore myData;
+    
+    if(!hasChecked){
+      if (bno.begin() && SD.begin(10) && bmp.begin()){
+        bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
+        Adafruit_BMP280::SAMPLING_X1,     /* Temp. oversampling 2*/
+        Adafruit_BMP280::SAMPLING_X1,    /* Pressure oversampling 16*/
+        Adafruit_BMP280::FILTER_X2,      /* Filtering. 16*/
+        Adafruit_BMP280::STANDBY_MS_0.5); /* Standby time. 125*/
+      }
+
+      else{
+        myData.errorReg ++;
+      }
+    }
+  }
+  
+};
+
 hardwire pixel;
 
 struct datastore {
@@ -64,29 +114,15 @@ void hardwireReceive(int bytes){
 }
 
 void loop() {
-  struct datastore myData;
+  switch (myData.state) {
+    case 1:
 
-}
+    case 2:
 
-void sensorLoop() {
+    case 3:
 
-  myData.temp = bmp.readTemperature();
+    default:
+    myData.errReg ++;
+  }
 
-  myData.alti = bmp.readAltitude(1013.25);
-
-  sensors_event_t orient, accel;
-  bno.getEvent(&orient, Adafruit_BNO055::VECTOR_EULER);
-  bno.getEvent(&accel, Adafruit_BNO055::VECTOR_LINEARACCEL);
-
-  myData.ox = orient.orientation.x, 4;
-  myData.oy = orient.orientation.y, 4;
-  myData.oz = orient.orientation.z, 4;
-
-  myData.ax = accel.acceleration.x, 4;
-  myData.ay = accel.acceleration.y, 4;
-  myData.az = accel.acceleration.z, 4;
-
-  dataFile = SD.open("log.dat", FILE_WRITE);
-  dataFile.write((const uint8_t *)&myData, sizeof(myData));
-  dataFile.close();
 }
