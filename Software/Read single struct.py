@@ -1,5 +1,12 @@
 import struct
 import csv
+from tkinter import *
+from tinter  import filedialog
+
+root = Tk()
+root.title("DAT to CSV")
+
+root.filename = filedialog.askopenfilename(initaldir="/", title="Select raw data file" filetypes=(("data files", "*.DAT")))
 
 lsdata = []
 

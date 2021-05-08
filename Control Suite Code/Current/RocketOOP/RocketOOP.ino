@@ -5,7 +5,12 @@
 #include <Adafruit_BNO055.h>
 #include <Adafruit_BMP280.h>
 
+Adafruit_BMP280 bmp;
+
+Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
+
 File dataFile;
+byte transferSuccess = false;
 
 class hardwire {
   private:
@@ -21,6 +26,7 @@ class hardwire {
 
   hardwireQuery(byte val){
     _tx = val;
+    Wire.begin(); //check if this is needed
     Wire.beginTransmission(8); // transmit to device #8
     Wire.write(_tx); 
     Wire.endTransmission();
@@ -71,15 +77,19 @@ class sensor {
     
     if(!hasChecked){
       if (bno.begin() && SD.begin(10) && bmp.begin()){
+        bno.setExtCrystalUse(true);
         bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
         Adafruit_BMP280::SAMPLING_X1,     /* Temp. oversampling 2*/
         Adafruit_BMP280::SAMPLING_X1,    /* Pressure oversampling 16*/
         Adafruit_BMP280::FILTER_X2,      /* Filtering. 16*/
         Adafruit_BMP280::STANDBY_MS_0.5); /* Standby time. 125*/
+        hasChecked = true;
+        return(true);
       }
 
       else{
         myData.errorReg ++;
+        return(false);
       }
     }
   }
@@ -87,6 +97,7 @@ class sensor {
 };
 
 hardwire pixel;
+sensor devices;
 
 struct datastore {
   unsigned long timer;
@@ -105,8 +116,10 @@ struct datastore {
 void setup() {
   Wire.onReceive(hardwireReceive);
   Serial.begin(115200);
+  myData.state = 1;
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
 }
-
 
 void hardwireReceive(int bytes){
   rx = Wire.read();
@@ -114,15 +127,86 @@ void hardwireReceive(int bytes){
 }
 
 void loop() {
+  myData.timer = millis();
   switch (myData.state) {
     case 1:
 
+      if(pixel.hardwireRx() == 2){
+        pixel.hardwireQuery(2);
+      }
+
+      if(pixel.hardwireRx() == 3){
+        transferSuccess = devices.sensorStart(1100);
+        if(transferSuccess){
+          pixel.hardwireQuery(3);
+        }
+        else{
+          pixel.hardwireQuery(4);
+        }
+      }
+
+      //exit conditions
+      if(transferSuccess){
+        transferSuccess = false;
+        myData.state = 2;
+      }
+
+      beep(myData.timer, 1000);
+      break;
+      
     case 2:
+      devices.sensorLoop();
+
+      if(pixel.hardwireRx() == 5){
+        if(myData.errReg == 0){
+          pixel.hardwireQuery(5);
+          transferSuccess = true;
+        }
+        else{
+          pixel.hardwireQuery(6);
+        }
+      }
+
+
+      //exit conditions
+      if(transferSuccess){
+        myData.state = 3;
+        transferSuccess = false;
+      }
+
+      beep(myData.timer, 300);
+      break;
 
     case 3:
+      devices.sensorLoop();
 
+      beep(myData.timer, 800);
+      break;
+      
     default:
-    myData.errReg ++;
+      myData.errReg ++;
+      beep(myData.timer, 100);
+      break;
   }
 
+}
+
+void beep(unsigned long delayTime, int pause){
+  static bool state;
+  static unsigned long lastTime;
+  if((delayTime - lastTime) > pause){
+    if(state){
+      digitalWrite(5, HIGH);
+      digitalWrite(6, HIGH);
+      state = false;
+      lastTime = delayTime;
+    }
+    else{
+      digitalWrite(5, LOW);
+      digitalWrite(6, LOW);
+      state = true;
+      lastTime = delayTime;      
+    }
+  }
+  
 }
