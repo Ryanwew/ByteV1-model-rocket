@@ -135,7 +135,7 @@ hardwire pixel;
 byte rx;
 
 void setup() {  
-  chip.bluetoothStart(115200);
+  chip.bluetoothStart(9600);
   pixel.hardwireStart(8);
 
   pinMode(8, OUTPUT);
@@ -160,11 +160,13 @@ void loop() {
     chip.bluetoothSet(0, 1);
   }
 
+  
   if(chip.rxInfo(0) == 1){
-    
+    digitalWrite(8, HIGH);
     pixel.hardwireQuery(3);
   }
   else if (chip.rxInfo(0) == 0){
+    digitalWrite(8, LOW);
   }
 
   chip.bluetoothDelay(timer);

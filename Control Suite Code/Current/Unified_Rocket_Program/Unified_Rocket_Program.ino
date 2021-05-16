@@ -63,8 +63,9 @@ void loop(void)
     Wire.begin();
   }
   */
+    
   Serial.println(check);
-  if(buttonid == 3 && go == false){  //buttonid == 4 && 
+  if(go == false){  //buttonid == 3 && 
     check = false;
     go = true;
   }
@@ -104,7 +105,8 @@ void loop(void)
      else{
         Wire.beginTransmission(9); // transmit to device #9
         Wire.write(5);       // sends x 
-        Wire.endTransmission();    // stop transmitting    
+        Wire.endTransmission();    // stop transmitting  
+        digitalWrite(5, HIGH);  
      }
   }
  else if(go && check){

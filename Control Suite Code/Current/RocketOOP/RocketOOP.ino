@@ -11,6 +11,23 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
 
 File dataFile;
 byte transferSuccess = false;
+byte rx;
+
+struct datastore {
+  unsigned long timer;
+  float ox;
+  float oy;
+  float oz;
+  float ax;
+  float ay;
+  float az;
+  float alti;
+  float temp;
+  byte state;
+  byte errReg;
+};
+
+struct datastore myData;
 
 class hardwire {
   private:
@@ -21,13 +38,13 @@ class hardwire {
   public:
   void hardwireStart(byte txid){
     _txid = txid;
-    Wire.begin();
+    Wire.begin(txid);
   }
 
   hardwireQuery(byte val){
     _tx = val;
     Wire.begin(); //check if this is needed
-    Wire.beginTransmission(8); // transmit to device #8
+    Wire.beginTransmission(9); // transmit to device #8
     Wire.write(_tx); 
     Wire.endTransmission();
     Wire.begin(9);  
@@ -73,7 +90,6 @@ class sensor {
 
   sensorStart(float ASL){
     _ASL = ASL;
-    struct datastore myData;
     
     if(!hasChecked){
       if (bno.begin() && SD.begin(10) && bmp.begin()){
@@ -82,13 +98,13 @@ class sensor {
         Adafruit_BMP280::SAMPLING_X1,     /* Temp. oversampling 2*/
         Adafruit_BMP280::SAMPLING_X1,    /* Pressure oversampling 16*/
         Adafruit_BMP280::FILTER_X2,      /* Filtering. 16*/
-        Adafruit_BMP280::STANDBY_MS_0.5); /* Standby time. 125*/
+        Adafruit_BMP280::STANDBY_MS_1); /* Standby time. 125*/
         hasChecked = true;
         return(true);
       }
 
       else{
-        myData.errorReg ++;
+        myData.errReg ++;
         return(false);
       }
     }
@@ -99,26 +115,14 @@ class sensor {
 hardwire pixel;
 sensor devices;
 
-struct datastore {
-  unsigned long timer;
-  float ox;
-  float oy;
-  float oz;
-  float ax;
-  float ay;
-  float az;
-  float alt;
-  float temp;
-  byte state;
-  byte errReg;
-};
-
 void setup() {
   Wire.onReceive(hardwireReceive);
-  Serial.begin(115200);
+  Serial.begin(9600);
   myData.state = 1;
+  pixel.hardwireStart(8);
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
+  devices.sensorStart(1100);
 }
 
 void hardwireReceive(int bytes){
@@ -128,6 +132,9 @@ void hardwireReceive(int bytes){
 
 void loop() {
   myData.timer = millis();
+  devices.sensorLoop();
+  
+  /*
   switch (myData.state) {
     case 1:
 
@@ -188,7 +195,7 @@ void loop() {
       beep(myData.timer, 100);
       break;
   }
-
+ */
 }
 
 void beep(unsigned long delayTime, int pause){
@@ -196,13 +203,13 @@ void beep(unsigned long delayTime, int pause){
   static unsigned long lastTime;
   if((delayTime - lastTime) > pause){
     if(state){
-      digitalWrite(5, HIGH);
+      //digitalWrite(5, HIGH);
       digitalWrite(6, HIGH);
       state = false;
       lastTime = delayTime;
     }
     else{
-      digitalWrite(5, LOW);
+      //digitalWrite(5, LOW);
       digitalWrite(6, LOW);
       state = true;
       lastTime = delayTime;      
