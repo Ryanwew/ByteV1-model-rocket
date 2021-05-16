@@ -122,7 +122,6 @@ void setup() {
   pixel.hardwireStart(8);
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
-  devices.sensorStart(1100);
 }
 
 void hardwireReceive(int bytes){
@@ -132,23 +131,23 @@ void hardwireReceive(int bytes){
 
 void loop() {
   myData.timer = millis();
-  devices.sensorLoop();
-  
-  /*
   switch (myData.state) {
     case 1:
-
+      Serial.println("state 1");
       if(pixel.hardwireRx() == 2){
         pixel.hardwireQuery(2);
       }
 
       if(pixel.hardwireRx() == 3){
+        Serial.println("attempting start");
         transferSuccess = devices.sensorStart(1100);
         if(transferSuccess){
           pixel.hardwireQuery(3);
+          Serial.println("start good");
         }
         else{
           pixel.hardwireQuery(4);
+          Serial.println("start fail");
         }
       }
 
@@ -162,6 +161,7 @@ void loop() {
       break;
       
     case 2:
+      Serial.println("state 2");
       devices.sensorLoop();
 
       if(pixel.hardwireRx() == 5){
@@ -195,7 +195,6 @@ void loop() {
       beep(myData.timer, 100);
       break;
   }
- */
 }
 
 void beep(unsigned long delayTime, int pause){

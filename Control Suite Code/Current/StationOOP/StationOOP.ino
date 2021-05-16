@@ -155,11 +155,10 @@ void loop() {
   
   chip.bluetoothRun();
   
-  if(pixel.hardwireRx() == 5){
+  if(pixel.hardwireRx() == 3){
     digitalWrite(8, HIGH);
     chip.bluetoothSet(0, 1);
   }
-
   
   if(chip.rxInfo(0) == 1){
     digitalWrite(8, HIGH);

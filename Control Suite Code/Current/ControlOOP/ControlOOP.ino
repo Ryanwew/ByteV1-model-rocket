@@ -115,11 +115,9 @@ void loop() {
 
   if(digitalRead(9)){
     chip.bluetoothSet(0, 1);
-    digitalWrite(8, HIGH);
   }
   else{
     chip.bluetoothSet(0, 0);
-    digitalWrite(8, LOW);
   }
 
 
