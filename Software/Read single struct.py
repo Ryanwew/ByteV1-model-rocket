@@ -38,7 +38,7 @@ def execute():
     with open(tru1, "w", newline='') as newFile:
         csvWriter = csv.writer(newFile, delimiter=",")
         newFile.truncate()
-        csvWriter.writerow(["time", "x", "y", "z", "temp", "press", "alti"])
+        csvWriter.writerow(["time", "orientation x", "orientation y", "orientation z", "acceleration x", "acceleration y", "acceleration z", "altitude", "temperature", "state", "error register"])
         newFile.close()
 
     # Loops through the DAT bin file untill there is no data, converts each value into the appropriate variable and appends them to the CSV
@@ -50,14 +50,19 @@ def execute():
             a = struct.unpack('L', b)
             lsdata.append(a[0])
             
-            for i in range(6):
+            for i in range(8):
                 b = dataFile.read(4)
                 if not b:
                     break
                 a = struct.unpack('f', b)
                 lsdata.append(a[0])
 
-            #lsdata.append(int.from_bytes(b, "big"))
+            for i in range(2):
+                b = dataFile.read(1)
+                if not b:
+                    break
+                lsdata.append(int.from_bytes(b, "big"))
+
             with open(tru1, "a", newline='') as newFile:
                 csvWriter = csv.writer(newFile, delimiter=",")
                 csvWriter.writerow(lsdata)
