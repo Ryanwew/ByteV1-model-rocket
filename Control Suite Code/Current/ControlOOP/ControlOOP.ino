@@ -1,6 +1,70 @@
 #include <SoftwareSerial.h>
 SoftwareSerial BTSerial(3, 2);
 
+class shift{
+  private:
+  byte _clk;
+  byte _latch;
+  byte _data;
+  byte _pinstates[8];
+  bool _blinking;
+  unsigned long _lastBlink;
+
+  void deploy(byte _a){
+    digitalWrite(_latch, LOW);
+    shiftOut(_data, _clk, MSBFIRST, info(_a));
+    digitalWrite(_latch, HIGH);
+  }
+
+  info(byte searchVal){
+    int _info = 0;
+    for(byte _i = 0; sizeof(_pinstates); _i ++){
+      if(_pinstates[_i] == searchVal || _pinstates[_i] == 3){
+        _info |= (1 << _i);
+      }
+    }
+    return(_info);
+  }
+
+  public:
+
+  void shiftStart(byte clk, byte latch, byte data){
+    _clk = clk;
+    _latch = latch;
+    _data = data;
+
+    byte _pinstates[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  
+    pinMode(_latch, OUTPUT);
+    pinMode(_clk, OUTPUT);
+    pinMode(_data, OUTPUT);
+    digitalWrite(_latch, HIGH);
+  }
+
+  void setState(byte pin, byte state){
+    if(_pinstates[pin] != state){
+      _pinstates[pin] = state;
+      deploy(1);
+    }
+  }
+
+  void blinkUpdate(unsigned long currentTime){
+    if((currentTime - _lastBlink) > 1000){
+      Serial.println(_pinstates[1]);
+      _lastBlink = currentTime;
+      for(byte _i = 0; sizeof(_pinstates); _i ++){
+        if(_pinstates[_i] == 3){
+          _pinstates[_i] = 4;
+        }
+        else if(_pinstates[_i] == 4){
+          _pinstates[_i] = 3;
+        }        
+      }
+      deploy(1);
+    }
+  }
+};
+
 class bluetooth {
   private:
   byte _pktx[5];
@@ -100,13 +164,22 @@ class bluetooth {
 
 bluetooth chip;
 
+shift led1;
+
 unsigned long timer;
 
 void setup() {
+  // clock latch data 
+  
   chip.bluetoothStart(9600);
+
+  led1.shiftStart(11, 10, 12);
 
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
+
+  led1.setState(0, 3);
+  led1.setState(8, 1);
 }
 
 void loop() {
@@ -125,6 +198,8 @@ void loop() {
     digitalWrite(8, HIGH);
   }
 
+  led1.blinkUpdate(millis());
+  
   delay(50);
-  //chip.bluetoothDelay(timer);
+  
 }
