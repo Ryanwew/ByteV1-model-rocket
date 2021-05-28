@@ -10,11 +10,15 @@ class shift{
   bool _blinking;
   unsigned long _lastBlink;
 
-  info(byte searchVal){
+  info(byte searchDelay){
     int _info = 0;
+    byte shiftTo;
     for(byte _i = 0; _i < sizeof(_pinstates); _i ++){
-      if(_pinstates[_i] == searchVal || _pinstates[_i] == 3){
-        _info |= (1 << _i);
+      if (_i >= searchDelay){
+        if(_pinstates[_i] == 1 || _pinstates[_i] == 3){
+          shiftTo = _i - searchDelay;
+          _info |= (1 << shiftTo);
+        }
       }
     }
     Serial.println(_info);
@@ -23,9 +27,10 @@ class shift{
 
   public:
 
-  void deploy(byte _a){
+  void deploy(){
     digitalWrite(_latch, LOW);
-    shiftOut(_data, _clk, MSBFIRST, info(_a));
+    shiftOut(_data, _clk, MSBFIRST, info(0));
+    shiftOut(_data, _clk, MSBFIRST, info(8));
     digitalWrite(_latch, HIGH);
   }
 
@@ -57,7 +62,7 @@ class shift{
           _pinstates[_i] = 3;
         }        
       }
-      deploy(1);
+      deploy();
     }
   }
 };
@@ -171,12 +176,20 @@ void setup() {
 
   led1.shiftStart(11, 10, 12);
   pinMode(9, INPUT);
-  led1.deploy(1);
+  led1.deploy();
 
-  led1.setState(8, 1);
-  led1.setState(0, 0);
+  led1.setState(8, 3);
+  /*
+  digitalWrite(10, LOW);
+  shiftOut(12, 11, MSBFIRST, 0);
+  digitalWrite(10, HIGH);
   
-  led1.deploy(1);
+  digitalWrite(10, LOW);
+  shiftOut(12, 11, MSBFIRST, 0);
+  shiftOut(12, 11, MSBFIRST, 1);
+  digitalWrite(10, HIGH);
+  */
+  led1.deploy();
 }
 
 void loop() {
@@ -185,11 +198,13 @@ void loop() {
   chip.bluetoothRun();
 
   if(digitalRead(9)){
-    //chip.bluetoothSet(0, 1);
-    led1.setState(8, 1);
+    digitalWrite(8, HIGH);
+    chip.bluetoothSet(0, 1);
+    led1.setState(0, 1);
   }
   else{
     chip.bluetoothSet(0, 0);
+    led1.setState(0, 0);
   }
 
 
