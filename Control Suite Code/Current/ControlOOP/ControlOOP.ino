@@ -6,7 +6,7 @@ class shift{
   byte _clk;
   byte _latch;
   byte _data;
-  byte _pinstates[8];
+  byte _pinstates[16];
   bool _blinking;
   unsigned long _lastBlink;
 
@@ -43,9 +43,7 @@ class shift{
   }
 
   void setState(byte pin, byte state){
-    if(_pinstates[pin] != state){
-      _pinstates[pin] = state;
-    }
+    _pinstates[pin] = state;
   }
 
   void blinkUpdate(unsigned long currentTime){
@@ -175,20 +173,20 @@ void setup() {
   pinMode(9, INPUT);
   led1.deploy(1);
 
-  led1.setState(0, 3);
-  led1.setState(8, 0);
+  led1.setState(8, 1);
+  led1.setState(0, 0);
+  
   led1.deploy(1);
 }
 
 void loop() {
-  delay(300);
-
   
   timer = millis();
   chip.bluetoothRun();
 
   if(digitalRead(9)){
     //chip.bluetoothSet(0, 1);
+    led1.setState(8, 1);
   }
   else{
     chip.bluetoothSet(0, 0);
