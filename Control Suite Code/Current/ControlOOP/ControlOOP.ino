@@ -1,6 +1,72 @@
 #include <SoftwareSerial.h>
 SoftwareSerial BTSerial(3, 2);
 
+class shift{
+  private:
+  byte _clk;
+  byte _latch;
+  byte _data;
+  byte _pinstates[16];
+  bool _blinking;
+  unsigned long _lastBlink;
+
+  info(byte searchDelay){
+    int _info = 0;
+    byte shiftTo;
+    for(byte _i = 0; _i < sizeof(_pinstates); _i ++){
+      if (_i >= searchDelay){
+        if(_pinstates[_i] == 1 || _pinstates[_i] == 3){
+          shiftTo = _i - searchDelay;
+          _info |= (1 << shiftTo);
+        }
+      }
+    }
+    Serial.println(_info);
+    return(_info);
+  }
+
+  public:
+
+  void deploy(){
+    digitalWrite(_latch, LOW);
+    shiftOut(_data, _clk, MSBFIRST, info(0));
+    shiftOut(_data, _clk, MSBFIRST, info(8));
+    digitalWrite(_latch, HIGH);
+  }
+
+  void shiftStart(byte clk, byte latch, byte data){
+    _clk = clk;
+    _latch = latch;
+    _data = data;
+
+    byte _pinstates[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  
+    pinMode(_latch, OUTPUT);
+    pinMode(_clk, OUTPUT);
+    pinMode(_data, OUTPUT);
+    digitalWrite(_latch, HIGH);
+  }
+
+  void setState(byte pin, byte state){
+    _pinstates[pin] = state;
+  }
+
+  void blinkUpdate(unsigned long currentTime){
+    if((currentTime - _lastBlink) > 1000){
+      _lastBlink = currentTime;
+      for(byte _i = 0; _i < sizeof(_pinstates); _i ++){
+        if(_pinstates[_i] == 3){
+          _pinstates[_i] = 4;
+        }
+        else if(_pinstates[_i] == 4){
+          _pinstates[_i] = 3;
+        }        
+      }
+      deploy();
+    }
+  }
+};
+
 class bluetooth {
   private:
   byte _pktx[5];
@@ -33,7 +99,6 @@ class bluetooth {
   }
 
   void valueCheck(){
-    Serial.println(_pkrx[0]);
     byte _rxsize;
     _rxsize = sizeof(_pkrx);
     static byte _valsum = 0;
@@ -67,14 +132,14 @@ class bluetooth {
     bluetoothRecive();
     valueCheck();
 
-    
+    /*
       Serial.print("tx: "); 
       Serial.println(_pktx[0]);
   Serial.print("rx: "); 
   Serial.println(_pkrx[0]);
       Serial.print("buffer: "); 
       Serial.println(_rxbuffer[0]);
-      Serial.println("");
+      Serial.println("");*/
   }
 
   bluetoothStart(int baudrate) {
@@ -100,24 +165,46 @@ class bluetooth {
 
 bluetooth chip;
 
+shift led1;
+
 unsigned long timer;
 
 void setup() {
+  pinMode(8, OUTPUT);
+  // clock latch data 
   chip.bluetoothStart(9600);
 
-  pinMode(8, OUTPUT);
+  led1.shiftStart(11, 10, 12);
   pinMode(9, INPUT);
+  led1.deploy();
+
+  led1.setState(8, 3);
+  /*
+  digitalWrite(10, LOW);
+  shiftOut(12, 11, MSBFIRST, 0);
+  digitalWrite(10, HIGH);
+  
+  digitalWrite(10, LOW);
+  shiftOut(12, 11, MSBFIRST, 0);
+  shiftOut(12, 11, MSBFIRST, 1);
+  digitalWrite(10, HIGH);
+  */
+  led1.deploy();
 }
 
 void loop() {
+  
   timer = millis();
   chip.bluetoothRun();
 
   if(digitalRead(9)){
+    digitalWrite(8, HIGH);
     chip.bluetoothSet(0, 1);
+    led1.setState(0, 1);
   }
   else{
     chip.bluetoothSet(0, 0);
+    led1.setState(0, 0);
   }
 
 
@@ -125,6 +212,8 @@ void loop() {
     digitalWrite(8, HIGH);
   }
 
+  led1.blinkUpdate(millis());
+  
   delay(50);
-  //chip.bluetoothDelay(timer);
+  
 }

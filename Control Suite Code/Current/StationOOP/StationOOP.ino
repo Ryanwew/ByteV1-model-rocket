@@ -141,6 +141,8 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(9, INPUT);
   Wire.onReceive(hardwireReceive);
+
+  pinMode(11, INPUT);
 }
 
 unsigned long timer;
@@ -165,6 +167,14 @@ void loop() {
     pixel.hardwireQuery(3);
   }
   else if (chip.rxInfo(0) == 0){
+    digitalWrite(8, LOW);
+  }
+
+  bool x = digitalRead(11);
+  if(x){
+    digitalWrite(8, HIGH);
+  }
+  else{
     digitalWrite(8, LOW);
   }
 
