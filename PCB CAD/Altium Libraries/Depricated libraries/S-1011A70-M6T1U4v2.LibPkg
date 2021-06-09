@@ -31,8 +31,8 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=0
-OutputPath=A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Altium Libraries\Project Outputs for FQD
-LogFolderPath=A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Altium Libraries\Project Logs for FQD
+OutputPath=
+LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
 
@@ -41,7 +41,7 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Altium Libraries\Schlib2.SchLib
+DocumentPath=S-1011A70-M6T1U4.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -55,10 +55,10 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=QTPWZCZF
+DocumentUniqueId=CIGZENNN
 
 [Document2]
-DocumentPath=A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Altium Libraries\PcbLib2.PcbLib
+DocumentPath=S-1011A70-M6T1U4.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -72,13 +72,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=HILJLYVO
-
-[Generic_EDE]
-OutputDir=A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Altium Libraries\Project Outputs for FQD
-
-[Generic_IntLibOptions]
-OldFormat=False
+DocumentUniqueId=EGEQXOAV
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -195,7 +189,7 @@ PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate
 [OutputGroup3]
 Name=Documentation Outputs
 Description=
-TargetPrinter=MF632CDW Color Printer
+TargetPrinter=Virtual Printer
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Composite
 OutputName1=Composite Drawing
@@ -1015,4 +1009,7 @@ ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=0|Use
 ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
 ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|UseName=0|InclAllRules=0
 ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
+
+[SmartPDF]
+PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
 
