@@ -1,0 +1,77 @@
+Change Component Footprint: Designator=F1 Old Footprint=FP-1812L-MFG New Footprint=FP-2920L-MFG
+Change Component Footprint: Designator=F2 Old Footprint=FP-MF-PSMF-MFG New Footprint=FP-1812L035-60MR-MFG
+Change Component Comment : Designator=F1 Old Comment=1812L150/24MR New Comment=2920L300/15DR
+Change Component Comment : Designator=F2 Old Comment=MF-PSMF020X-2 New Comment=1812L035/60MR
+Change Managed Component Library Link : Designator=F1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=61D3A424-5117-4CE0-80BA-5DEEF1DDAA60 New ItemGUID=A8AE594E-8390-41D0-9AAB-088FCEAB5D2D Old RevisionGUID=3630E7F0-FBA2-49F9-B02A-98A98546B105 New RevisionGUID=7BBD207A-74D6-404F-9C40-78279159B6D1
+Change Managed Component Library Link : Designator=F2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=CD08882C-17F5-42FC-9F02-2D5D68E4F52B New ItemGUID=35014369-D2A9-4A4D-AD88-272644BE7254 Old RevisionGUID=208D536C-85DA-442F-A173-35AC2FBCBF5E New RevisionGUID=269BC305-C0F2-4A83-B262-038C93505848
+Change component parameters: Designator = "F2" ("F2"); Footprint = "FP-MF-PSMF-MFG"; UniqueID = "\LRLCYWWI" ("\LRLCYWWI")
+Change component parameters (AddParameter): Name = "Ambient Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ambient Temperature Range Low"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Fuse"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_1812l_datasheet.pdf.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "10A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L1"; Value = "Circuit Protection"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L2"; Value = "PTC Resettable Fuses"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L3"; Value = "unset"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Digikey Description"; Value = "PTC RESET FUSE 60V 350MA 1812"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "1.8mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Hold Current"; Value = "0.35A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "1812L035/60MR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Octopart"; Value = "https://octopart.com/1812l035%2F60mr-littelfuse-75250819"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "0.4-1.7O"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature"; Value = "-40°C to +85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Range Low"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Trip Current"; Value = "0.7A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Trip Time"; Value = "0.15s"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0.4-1.7O"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "60V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "F1" ("F1"); Footprint = "FP-1812L-MFG"; UniqueID = "\LSFPLFGM" ("\LSFPLFGM")
+Change component parameters (AddParameter): Name = "Ambient Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ambient Temperature Range Low"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Fuse"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://m.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_2920l_datasheet.pdf.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "40A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L1"; Value = "Circuit Protection"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L2"; Value = "PTC Resettable Fuses"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device Class L3"; Value = "unset"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Digikey Description"; Value = "PTC RESET FUSE 15V 3A 2920"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "1.25mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Hold Current"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Littelfuse"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "2920L300/15DR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Octopart"; Value = "https://octopart.com/2920l300%2F15dr-littelfuse-673797"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "2920L"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "0.015-0.048O"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature"; Value = "-40°C to +85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Range High"; Value = "+85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Range Low"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Trip Current"; Value = "5A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Trip Time"; Value = "20s"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "0.015-0.048O"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "15V"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L

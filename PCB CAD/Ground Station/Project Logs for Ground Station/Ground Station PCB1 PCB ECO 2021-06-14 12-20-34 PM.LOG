@@ -1,0 +1,49 @@
+Added Component: Designator=J2(LL_5_00_90_03)
+Add component (AddParameter): Name = "Colour"; Value = "Orange"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.weidmueller.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "URL Link1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://catalog.weidmueller.com/catalog/Start.do?localeId=en&ObjectID=1934280000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_material"; Value = "Cu-Leg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_surface"; Value = "tinned"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Insulating_material"; Value = "Wemid (PA)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Weidmueller"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting_onto_the_PCB"; Value = "Solder connection"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No_of_poles"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "LL_5_00_90_03"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Box"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "1934280000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch_inch"; Value = "0,197 inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch_mm"; Value = "5 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Qty"; Value = "100 PCS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated_current_use_group_B_UL_1059"; Value = "20 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated_voltage_for_surge_voltage_class_pollution_degree_II_2"; Value = "500 V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated_voltage_use_group_B_UL_1059"; Value = "300 V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Revision"; Value = "V1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Short_text_for_material"; Value = "LL 5.00/03/90 3.2SN OR BX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Side_termination_characteristic"; Value = "closed side"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder_pin_length_mm"; Value = "3,2 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solid_max_H05_07_V_U"; Value = "6 mm²"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solid_min_H05_07_V_U"; Value = "0,5 mm²"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "UL_94_flammability_rating"; Value = "V-0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wire_cross_section_AWG_max_UL_1059"; Value = "AWG 12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wire_cross_section_AWG_min_UL_1059"; Value = "AWG 28"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetA2_24 Pin=J2-A1
+Added Pin To Net: NetName=GND5 Pin=J2-A2
+Added Pin To Net: NetName=NetA2_23 Pin=J2-A3
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J2 1934280000
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
