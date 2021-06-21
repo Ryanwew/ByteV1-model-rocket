@@ -1,0 +1,71 @@
+Removed Pin From Net: NetName=NetC2_2 Pin=C6-1
+Removed Pin From Net: NetName=PWR+ Pin=C6-2
+Removed Pin From Net: NetName=5V Pin=C9-1
+Removed Pin From Net: NetName=PWR+ Pin=C9-2
+Removed Pin From Net: NetName=PWR+ Pin=D1-2
+Removed Pin From Net: NetName=PWR+ Pin=F2-1
+Removed Pin From Net: NetName=5V Pin=L2-2
+Removed Pin From Net: NetName=PWR+ Pin=U3-6
+Removed Pin From Net: NetName=NetC2_2 Pin=U3-7
+Removed Member From Class: ClassName=Power Member=C6
+Removed Member From Class: ClassName=Power Member=C9
+Removed Member From Class: ClassName=Power Member=C10
+Removed Member From Class: ClassName=Power Member=D1
+Removed Member From Class: ClassName=Power Member=L2
+Removed Member From Class: ClassName=Power Member=U3
+Added Component: Designator=U?(RGT0016C_V)
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MO-220"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=TPS62153&fileType=pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.ti.com/litv/pdf/mpqf119g"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "URL Link1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "Samples URL:http://www.ti.com/product/tps54611#samples"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "SLVSAL5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Duty Cycle(Max)(%)"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Eco-Plan"; Value = "Green (RoHS & no Sb/Br)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Iout(Max)(A)"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Iq(Typ)(mA)"; Value = "0.017"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "16-Pin Plastic Quad Flat No-Lead, 3 x 3 mm Body, 0.5 mm Pitch, 1.7 x 1.7 mm Exposed Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RGT0016C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "revH, Oct-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "TPS62153RGTT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Preset Vout(V)"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rating"; Value = "Catalog"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Regulated Outputs(#)"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SubFamily"; Value = "Step-Down Regulator"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Switch Current Limit(Typ)(A)"; Value = "1.7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Synchronous Rectification"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Topology"; Value = "Buck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Vin(Max)(V)"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Vin(Min)(V)"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Vout(Max)(V)"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Vout(Min)(V)"; Value = "5"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=F2-1
+Added Pin To Net: NetName=NetC2_2 Pin=U?-5
+Added Pin To Net: NetName=NetC2_2 Pin=U?-6
+Added Pin To Net: NetName=NetC2_2 Pin=U?-15
+Added Pin To Net: NetName=NetC2_2 Pin=U?-16
+Added Pin To Net: NetName=NetC2_2 Pin=U?-17
+Added Pin To Net: NetName=NetC2_2 Pin=U?-17
+Added Pin To Net: NetName=NetU?_4 Pin=U?-4
+Added Pin To Net: NetName=NetU?_4 Pin=U?-14
+Added Net: Name=NetU?_4
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Power Member=Component U? TPS62153RGTT

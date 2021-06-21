@@ -1,0 +1,35 @@
+Removed Pin From Net: NetName=5V Pin=C10-1
+Removed Pin From Net: NetName=5V Pin=C10-1
+Removed Pin From Net: NetName=NetC2_2 Pin=C10-2
+Removed Pin From Net: NetName=NetC2_2 Pin=C10-2
+Change Component Footprint: Designator=C10 Old Footprint=NIC-CAPA2-6.3X5.8_V New Footprint=KEMT-T495-D_L
+Change Component Comment : Designator=C10 Old Comment=UUD1E330MCL1GS New Comment=T495D107K010ATE100
+Change Managed Component Library Link : Designator=C10 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=8A474CE7-7FFE-4093-B174-357EBE2C093D New ItemGUID=86D87285-0868-46B7-BDB7-B49A82466959 Old RevisionGUID=6A2113EC-3ABC-466F-A1CE-719CFCB4D3AF New RevisionGUID=9EEF0FB8-1A9E-45AD-96C0-256E35E7E0B6
+Change component parameters: Designator = "C10" ("C10"); Footprint = "NIC-CAPA2-6.3X5.8_V"; UniqueID = "\TSPNPWFX" ("\TSPNPWFX")
+Change component parameters (AddParameter): Name = "Brand/Series"; Value = "T495Series"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet URL"; Value = "http://capacitoredge.kemet.com/capedge2/DataSheet/Datasheet-T495D107K010ATE100.pdf?pn=T495D107K010ATE100"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Version"; Value = "09/2016"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer URL"; Value = "http://www.kemet.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Material, Element"; Value = "Tantalum"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Type"; Value = "PCB"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Description"; Value = "2-Pin Surface Mount Device, Body 7.3 x 4.3 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Reference"; Value = "T495-D"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape&amp;Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Termination"; Value = "SMD"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
