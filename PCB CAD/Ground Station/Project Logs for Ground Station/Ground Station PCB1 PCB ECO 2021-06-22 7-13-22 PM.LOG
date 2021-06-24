@@ -1,0 +1,50 @@
+Change Component Footprint: Designator=Q2 Old Footprint=RENE-LFPAK-5_L New Footprint=INF-PG-TDSON-8-1_V
+Change Component Comment : Designator=Q2 Old Comment=RJK0651DPB-00#J5 New Comment=BSC050NE2LS
+Change Managed Component Library Link : Designator=Q2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=141BB02A-8DB2-40E6-8D87-703CCF2706BB New ItemGUID=2FFA90AD-EA0B-4AA8-BC3B-6FE9FCECCF64 Old RevisionGUID=F22FA7AF-0BCA-45CB-8F64-08117D3DFBC4 New RevisionGUID=5DBA9932-A7A1-446F-88CB-080742B9253A
+Change component parameters: Designator = "Q2" ("Q2"); Footprint = "RENE-LFPAK-5_L"; UniqueID = "\KWXKGOCF" ("\KWXKGOCF")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.infineon.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.infineon.com/dgdl/BSC050NE2LS_Rev+2.1_.pdf?folderId=db3a304326dfb1300126fb3bec803f1a&fileId=db3a304326dfb1300126fb5ce0cb3f2d"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.infineon.com/cms/packages/SMD_-_Surface_Mounted_Devices/P-PG-TDSON/P-PG-TDSON-08-01x_2x_3.html?__locale=en"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetVersion"; Value = "Rev. 2.1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Green"; Value = "TRUE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Halogen-free"; Value = "TRUE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID (max)"; Value = "58 A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "IDpuls (max)"; Value = "232 A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Infineon"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "8-Pin Plastic (Green) Thin Dual Small Outline Non-Leaded Package, 5.15 x 5.9 mm Body, 1.27 mm Pitch"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "PG-TDSON-8-1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packing"; Value = "Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "BSC050NE2LS"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Polarity"; Value = "N"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ptot (max)"; Value = "28 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "QG"; Value = "5 nC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RDS (on) (max)"; Value = "5 mOhm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RDS (on) (max) (@4.5V)"; Value = "7.1 mOhm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rth"; Value = "4.5 K/W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RthJA (max)"; Value = "50 K/W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RthJC (max)"; Value = "4.5 K/W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "VDS (max)"; Value = "25 V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "VGS(th) (max)"; Value = "2 V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "VGS(th) (min)"; Value = "1.2 V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetD2_3 Pin=Q2-6
+Added Pin To Net: NetName=NetD2_3 Pin=Q2-7
+Added Pin To Net: NetName=NetD2_3 Pin=Q2-8
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 BSS138LT1G
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L

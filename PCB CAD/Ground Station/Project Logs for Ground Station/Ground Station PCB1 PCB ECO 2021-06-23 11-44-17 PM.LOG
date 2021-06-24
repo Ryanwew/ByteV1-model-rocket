@@ -1,0 +1,51 @@
+Change Component Footprint: Designator=Q5 Old Footprint=FP-SO-4-MFG New Footprint=FAIR-SMT-4_V
+Change Component Comment : Designator=Q5 Old Comment=HCPL-181-00CE New Comment=FOD817A3SD
+Change Managed Component Library Link : Designator=Q5 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=F8D86110-F028-42F4-8AF4-71554E33852B New ItemGUID=9D081FD2-AB70-4F9B-8BC6-709A82BA29E1 Old RevisionGUID=17C64CB9-3AF4-45C6-9A17-0323B1EF4194 New RevisionGUID=AD456A7D-0429-4EC3-9BC5-476633FAF227
+Change component parameters: Designator = "Q5" ("Q5"); Footprint = "FP-SO-4-MFG"; UniqueID = "\OTDKMTKE" ("\OTDKMTKE")
+Change component parameters (AddParameter): Name = "Collector Current (DC)"; Value = "0.05A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Collector Current (DC) (Max)"; Value = "0.05A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Collector-Emitter Saturation Voltage"; Value = "0.2V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Collector-Emitter Voltage"; Value = "70V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Transfer Ratio"; Value = "160%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet URL"; Value = "https://www.fairchildsemi.com/datasheets/FO/FOD814A.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Version"; Value = "Rev. 2.8, 11/2015"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DELETED"; Value = "Compliant"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Fall Time"; Value = "18000ns"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Forward Current"; Value = "50mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Forward Voltage"; Value = "1.4V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Input Type"; Value = "DC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Isolation Voltage"; Value = "5000V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Fairchild Semiconductor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer URL"; Value = "https://www.fairchildsemi.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of  Elements"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temp Range"; Value = "-55Cto110C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature Classification"; Value = "Industrial"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Device"; Value = "Transistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Type"; Value = "DC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Description"; Value = "4-Pin Surface Mount Device, Body 6.5 x 4.6 mm, Pitch 2.54 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Reference"; Value = "SMT-4"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Type"; Value = "PDIP-BSMD"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package URL"; Value = "https://www.fairchildsemi.com/package-drawings/N0/N04C.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "TapeandReel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "4"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power Dissipation"; Value = "0.2W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rad Hardened"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Reverse Breakdown Voltage"; Value = "6V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rise Time"; Value = "18000ns"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
