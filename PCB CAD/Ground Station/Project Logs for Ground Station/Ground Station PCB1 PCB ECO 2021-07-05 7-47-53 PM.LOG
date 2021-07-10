@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=GND5 Pin=A1-3
+Added Pin To Net: NetName=GND Pin=A1-3
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Room: Name=Station sheet1

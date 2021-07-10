@@ -1,0 +1,77 @@
+Removed Pin From Net: NetName=GND5 Pin=A2-29
+Removed Pin From Net: NetName=12V Pin=C8-2
+Removed Pin From Net: NetName=5V Pin=C10-1
+Removed Pin From Net: NetName=12V Pin=D2-4
+Removed Pin From Net: NetName=NetC2_2 Pin=F1-1
+Removed Pin From Net: NetName=NetC2_2 Pin=F2-1
+Removed Pin From Net: NetName=GND5 Pin=F2-2
+Removed Pin From Net: NetName=GND5 Pin=J2-A2
+Removed Pin From Net: NetName=5V Pin=L2-2
+Removed Pin From Net: NetName=GND5 Pin=Q3-2
+Removed Pin From Net: NetName=GND5 Pin=Q5-2
+Removed Pin From Net: NetName=12V Pin=R8-2
+Removed Pin From Net: NetName=5V Pin=R12-2
+Removed Pin From Net: NetName=GND5 Pin=R12-2
+Removed Pin From Net: NetName=GND5 Pin=R13-2
+Removed Pin From Net: NetName=GND5 Pin=R13-2
+Removed Pin From Net: NetName=GND5 Pin=R13-2
+Removed Pin From Net: NetName=GND5 Pin=R14-2
+Added Component: Designator=LED1(1206_A)
+Add component (AddParameter): Name = "Color"; Value = "Green"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.com/led/datasheet/150120GS75000.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wuerth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "1206_A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "150120GS75000"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_2 Pin=A2-29
+Added Pin To Net: NetName=12V Pin=F1-2
+Added Pin To Net: NetName=5V Pin=F2-2
+Added Pin To Net: NetName=NetC2_2 Pin=J2-A2
+Added Pin To Net: NetName=NetC2_2 Pin=K1-2
+Added Pin To Net: NetName=NetC2_2 Pin=LED1-1
+Added Pin To Net: NetName=NetLED1_2 Pin=LED1-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q3-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q4-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q4-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q4-2
+Added Pin To Net: NetName=NetC2_2 Pin=Q5-2
+Added Pin To Net: NetName=NetC2_2 Pin=R11-2
+Added Pin To Net: NetName=NetC2_2 Pin=R11-2
+Added Pin To Net: NetName=NetC2_2 Pin=R11-2
+Added Pin To Net: NetName=NetC2_2 Pin=R12-2
+Added Pin To Net: NetName=NetC2_2 Pin=R13-2
+Added Pin To Net: NetName=NetC2_2 Pin=R13-2
+Added Pin To Net: NetName=NetC2_2 Pin=R13-2
+Added Pin To Net: NetName=NetC2_2 Pin=R14-2
+Change Net Name : Old Net Name=NetC2_2 New Net Name=GND
+Added Pin To Net: NetName=NetC8_2 Pin=C8-2
+Added Pin To Net: NetName=NetC8_2 Pin=D2-4
+Added Pin To Net: NetName=NetC8_2 Pin=F1-1
+Added Pin To Net: NetName=NetC8_2 Pin=R8-2
+Added Net: Name=NetC8_2
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_1 Pin=F2-1
+Added Pin To Net: NetName=NetC10_1 Pin=L2-2
+Added Pin To Net: NetName=NetC10_1 Pin=R12-2
+Added Net: Name=NetC10_1
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component J1 691102710002
+Added Member To Class: ClassName=Station sheet1 Member=Component LED1 150120GS75000
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component Q4 DMN10H220L-7
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R11 CRCW120620K0FKEAHP
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Station sheet1 Member=Component R13 AC1206FR-074K7L
+Added Member To Class: ClassName=Power Member=Component U1 S-1011A70-M6T1U4
+Added Room: Name=Power
+Added Room: Name=Station sheet1

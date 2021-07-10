@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Ground Station.PrjPcb]
+   Generated File[Ground Station PCB1.TXT]
+   Generated File[Ground Station PCB1.LDP]
+   Generated File[Ground Station PCB1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 11:33:17 AM On 2021-07-10
