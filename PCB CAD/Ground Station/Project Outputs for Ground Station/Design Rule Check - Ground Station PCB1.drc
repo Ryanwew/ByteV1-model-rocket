@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : A:\GithubDesktop\Model-Rocket-Design\PCB CAD\Ground Station\Ground Station PCB1.PcbDoc
 Date     : 2021-07-10
-Time     : 11:32:34 AM
+Time     : 1:37:10 PM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
@@ -51,4 +51,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

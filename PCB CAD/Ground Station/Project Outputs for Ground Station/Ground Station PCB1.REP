@@ -2,6 +2,79 @@
 FileName = Ground Station PCB1.GBR
 AutoAperture = True
 *************************************************************
+Generating : Top Component Center
+      File : Ground Station PCB1.GM16
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Ground Station PCB1.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D106
+    D114
+    D115
+    D116
+    D117
+    D118
+*************************************************************
+
+*************************************************************
 Generating : Top 3D Body
       File : Ground Station PCB1.GM13
 
@@ -94,37 +167,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : Ground Station PCB1.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D106
-    D114
-    D115
-    D116
-    D117
-    D118
-    D119
-*************************************************************
-
-*************************************************************
-Generating : Top Component Center
-      File : Ground Station PCB1.GM16
-
-    Adding Layer      : Top Component Center
-
-
-Used DCodes :
-    D120
-*************************************************************
-
-*************************************************************
 Generating : Bottom Overlay
       File : Ground Station PCB1.GBO
 
@@ -154,82 +196,6 @@ Used DCodes :
     D110
     D111
     D112
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : Ground Station PCB1.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
-    D53
-    D54
-    D55
-    D56
-    D57
-    D58
-    D59
-    D60
-    D106
-    D113
-    D114
-    D115
-    D116
-    D117
-    D118
-    D119
-*************************************************************
-
-*************************************************************
-Generating : Outline
-      File : Ground Station PCB1.GM1
-
-    Adding Layer      : Outline
-
-
-Used DCodes :
-    D10
 *************************************************************
 
 *************************************************************
@@ -305,8 +271,56 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Pad Master
-      File : Ground Station PCB1.GPT
+Generating : Top Overlay
+      File : Ground Station PCB1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Ground Station PCB1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D106
+    D114
+    D115
+    D116
+    D117
+    D118
+    D119
+*************************************************************
+
+*************************************************************
+Generating : Outline
+      File : Ground Station PCB1.GM1
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Ground Station PCB1.GTL
 
     Adding Layer      : Top Layer
 
@@ -314,6 +328,7 @@ Generating : Top Pad Master
 
 
 Used DCodes :
+    D11
     D17
     D18
     D19
@@ -359,28 +374,13 @@ Used DCodes :
     D59
     D60
     D106
+    D113
     D114
     D115
     D116
     D117
     D118
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : Ground Station PCB1.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
+    D119
 *************************************************************
 
 *************************************************************
